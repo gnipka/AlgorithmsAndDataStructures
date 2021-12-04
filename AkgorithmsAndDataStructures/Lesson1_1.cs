@@ -5,16 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace AlgorithmsAndDataStructures
-{
-    class Lesson1_1
+{  
+    public class Lesson1
     {
-        /// <summary>
-        /// Интерфейс программы
-        /// </summary>
-        public static void OutputConsole()
+        public void Output(IHomework homework)
         {
             Console.WriteLine("Тестирование программы:");
-            Test();
+            homework.Test();
             Console.WriteLine("Для возвращения в меню введите return");
             while (true)
             {
@@ -24,36 +21,18 @@ namespace AlgorithmsAndDataStructures
                 {
                     return;
                 }
-                if (IsNum(str))
+                if (homework.IsNum(str))
                 {
-                    PrimeOrNotPrimeNumber(Convert.ToInt32(str));
+                    homework.Algorithms(Convert.ToInt32(str));
                 }
             }
         }
-        /// <summary>
-        /// Проверка строки на число
-        /// </summary>
-        /// <param name="str"></param>
-        /// <returns></returns>
-        static bool IsNum(string str)
-        {
-            int num;
-            bool isNum = int.TryParse(str, out num);
-            if (isNum)
-            {
-                return true;
-            }
-            else
-            {
-                Console.WriteLine($"Введенное значение не является числом {str}");
-                return false;
-            }
-        }
-        /// <summary>
-        /// Алгоритм для определения простое число или нет
-        /// </summary>
-        /// <param name="number"></param>
-        static void PrimeOrNotPrimeNumber(int number)
+
+    }
+    class Lesson1_1:Lesson1, IHomework
+    {
+
+        public void Algorithms(int number)
         {
             int d = 0;
             int i = 2;
@@ -77,17 +56,51 @@ namespace AlgorithmsAndDataStructures
             }
         }
         /// <summary>
-        /// Тестирование функции PrimeOrNotPrimeNumber
+        /// Проверка строки на число
         /// </summary>
-        static void Test()
+        /// <param name="str"></param>
+        /// <returns></returns>  
+        public bool IsNum(string str)
+        {
+            int num;
+            bool isNum = int.TryParse(str, out num);
+            if (isNum)
+            {
+                return true;
+            }
+            else
+            {
+                Console.WriteLine($"Введенное значение не является числом {str}");
+                return false;
+            }
+        }
+
+        public void Test()
         {
             int a = 37;
             int b = 8;
             Console.WriteLine("Положительный сценарий: ");
-            PrimeOrNotPrimeNumber(a);
+            Algorithms(a);
 
             Console.WriteLine("Отрицательный сценарий: ");
-            PrimeOrNotPrimeNumber(b);
+            Algorithms(b);
+        }
+    }
+    class Lesson1_3 : Lesson1, IHomework
+    {
+        public void Algorithms(int number)
+        {
+
+        }
+
+        public bool IsNum(string str)
+        {
+            return true;
+        }
+
+        public void Test()
+        {
+
         }
     }
 }
