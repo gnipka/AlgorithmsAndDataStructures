@@ -10,8 +10,8 @@ namespace AlgorithmsAndDataStructures
             {
                 Console.WriteLine("0 - Выход из программы");
                 Console.WriteLine("1 - Задание 1.1");
-                Console.WriteLine("2 - Задание 1.2");
-                Console.WriteLine("3 - Задание 1.3");
+                Console.WriteLine("2 - Задание 1.3");
+
                 Lesson1 lesson1 = new Lesson1();
                 switch (Console.ReadLine().Trim())
                 {
@@ -24,6 +24,8 @@ namespace AlgorithmsAndDataStructures
                         Console.Clear();
                         break;
                     case "2":
+                        Lesson1_3 lesson1_3 = new Lesson1_3();
+                        lesson1_3.Output(lesson1_3);
                         Console.Clear();
                         break;
                     case "3":
