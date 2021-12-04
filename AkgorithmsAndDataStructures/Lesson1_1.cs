@@ -45,7 +45,7 @@ namespace AlgorithmsAndDataStructures
             }
             else
             {
-                Console.WriteLine("Введенное число некорректно!");
+                Console.WriteLine($"Введенное значение не является числом {str}");
                 return false;
             }
         }
