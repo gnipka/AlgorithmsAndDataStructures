@@ -19,6 +19,7 @@ namespace AlgorithmsAndDataStructures
                         Environment.Exit(0);
                         break;
                     case "1":
+                        Lesson1_1.OutputConsole();
                         Console.Clear();
                         break;
                     case "2":
