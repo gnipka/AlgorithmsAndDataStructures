@@ -9,7 +9,8 @@ namespace AlgorithmsAndDataStructures
         static List<IHomework> _homeworks = new List<IHomework>()
         {
             new Lesson1_1(),
-            new Lesson1_3()
+            new Lesson1_3(),
+            new Lesson2()
         };
         static void Main(string[] args)
         {
@@ -36,7 +37,7 @@ namespace AlgorithmsAndDataStructures
                     }
                     catch (InvalidOperationException)
                     {
-                        Console.WriteLine($"Задания с кодом {nameLesson} не найдено");
+                        Console.WriteLine($"Задание с кодом {nameLesson} не найдено");
                         Console.WriteLine("Введите код");
                     }
                 }
