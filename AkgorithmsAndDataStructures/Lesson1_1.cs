@@ -1,44 +1,21 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AlgorithmsAndDataStructures
-{  
-    public class Lesson1
-    {
-        public void Output(IHomework homework)
-        {
-            Console.WriteLine("Тестирование программы:");
-            homework.Test();
-            Console.WriteLine("Для возвращения в меню введите return");
-            while (true)
-            {
-                Console.WriteLine("Введите число");
-                string str = Console.ReadLine();
-                if (str.Trim() == "return")
-                {
-                    return;
-                }
-                if (homework.IsNum(str))
-                {
-                    homework.Algorithms(Convert.ToInt32(str));
-                    Console.WriteLine();
-                }
-            }
-        }
-
-    }
+{
 
     //Требуется реализовать на C# функцию согласно блок-схеме. Блок-схема описывает алгоритм проверки, простое число или нет.
     //1. Реализовать в виде консольного приложения.
     //2. Алгоритм реализовать в отдельном классе согласно блок-схеме.
     //3. Написать проверочный код(один положительный, один отрицательный сценарий) в отдельной функции и вызывать его при запуске.
     //4. Код выложить на GitHub.
-
-    class Lesson1_1 :Lesson1, IHomework
+    class Lesson1_1 : Lesson, IHomework
     {
+        public string Name => "1.1";
+
+        public string Description => "Анализ принадлежности к множеству простых чисел.";
+
+        public string Condition => "Введите число";
+
         /// <summary>
         /// Функция проверки числа на простое
         /// </summary>
@@ -67,28 +44,9 @@ namespace AlgorithmsAndDataStructures
             }
         }
         /// <summary>
-        /// Проверка строки на число
-        /// </summary>
-        /// <param name="str"></param>
-        /// <returns></returns>  
-        public bool IsNum(string str)
-        {
-            int num;
-            bool isNum = int.TryParse(str, out num);
-            if (isNum)
-            {
-                return true;
-            }
-            else
-            {
-                Console.WriteLine($"Введенное значение не является числом {str}");
-                return false;
-            }
-        }
-        /// <summary>
         /// Тестирование числа с положительным и отрицательным исходом
         /// </summary>
-        public void Test()
+        public void Demo()
         {
             int a = 37;
             int b = 8;
@@ -98,13 +56,37 @@ namespace AlgorithmsAndDataStructures
             Console.WriteLine("Отрицательный сценарий: ");
             Algorithms(b);
         }
+        /// <summary>
+        /// Проверка на корректоность введенных данных, при положительном исходе вызов вычислительной функции
+        /// </summary>
+        /// <param name="str"></param>
+        public void WorkWithClientData(string str)
+        {
+            int num;
+            bool isNum = int.TryParse(str, out num);
+            if (isNum)
+            {
+                Algorithms(Convert.ToInt32(str));
+            }
+            else
+            {
+                Console.WriteLine($"Введенное значение не является числом {str}");
+                return;
+            }
+        }
     }
+
     //1. Реализовать рекурсивную версию и версию без рекурсии(через цикл);
     //2. Обе реализации сделать методами отдельного класса;
     //3. На вход методы должны принимать целочисленный параметр, определяющий количество элементов формируемой последовательности.
-
-    class Lesson1_3 : Lesson1, IHomework
+    class Lesson1_3 : Lesson, IHomework
     {
+        public string Name => "1.3";
+
+        public string Description => "Реализация вывода чисел Фибоначчи с рекурсией и без";
+
+        public string Condition => "Введите число - количество чисел для вывода последовательности Фибоначчи";
+
         public void Algorithms(int count)
         {
             Console.Write("Вывод последовательности Фибоначчи с рекурсией: ");
@@ -161,31 +143,30 @@ namespace AlgorithmsAndDataStructures
             }
         }
         /// <summary>
-        /// Проверка строки на число
+        /// Тестирование числа на значениях 5 и 15
+        /// </summary>
+        public void Demo()
+        {
+            Algorithms(5);
+            Algorithms(15);
+        }
+        /// <summary>
+        /// Проверка введенных данных, при положительном исходе вызов вычислительной функции
         /// </summary>
         /// <param name="str"></param>
-        /// <returns></returns>  
-        public bool IsNum(string str)
+        public void WorkWithClientData(string str)
         {
             int num;
             bool isNum = int.TryParse(str, out num);
             if (isNum)
             {
-                return true;
+                Algorithms(Convert.ToInt32(str));
             }
             else
             {
                 Console.WriteLine($"Введенное значение не является числом {str}");
-                return false;
+                return;
             }
-        }
-        /// <summary>
-        /// Тестирование числа на значениях 5 и 15
-        /// </summary>
-        public void Test()
-        {
-            Algorithms(5);
-            Algorithms(15);
         }
     }
 }
