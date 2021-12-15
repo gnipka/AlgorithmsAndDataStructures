@@ -31,8 +31,7 @@ namespace AlgorithmsAndDataStructures
                     try
                     {
                         IHomework homeworkNow = _homeworks.Single(h => h.Name == nameLesson.Trim());
-                        Lesson lesson = new Lesson();
-                        lesson.Output(homeworkNow);
+                        homeworkNow.Output();
                         break;
                     }
                     catch (InvalidOperationException)

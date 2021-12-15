@@ -16,5 +16,6 @@
         /// </summary>
         void Demo();
         void WorkWithClientData(string str);
+        void Output();
     }
 }

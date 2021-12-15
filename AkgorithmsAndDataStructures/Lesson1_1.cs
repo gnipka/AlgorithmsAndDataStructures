@@ -8,13 +8,32 @@ namespace AlgorithmsAndDataStructures
     //2. Алгоритм реализовать в отдельном классе согласно блок-схеме.
     //3. Написать проверочный код(один положительный, один отрицательный сценарий) в отдельной функции и вызывать его при запуске.
     //4. Код выложить на GitHub.
-    class Lesson1_1 : Lesson, IHomework
+    class Lesson1_1 : Lesson
     {
-        public string Name => "1.1";
-
-        public string Description => "Анализ принадлежности к множеству простых чисел.";
-
-        public string Condition => "Введите число";
+        private string name = "1.1";
+        /// <summary>
+        /// Код урока
+        /// </summary>
+        public override string Name
+        {
+            get { return name; }
+        }
+        private string description = "Анализ принадлежности к множеству простых чисел.";
+        /// <summary>
+        /// Описание урока
+        /// </summary>
+        public override string Description
+        {
+            get { return description; }
+        }
+        private string condition = "Введите число";
+        /// <summary>
+        /// Условия для ввода данных (при пользовательском вводе)
+        /// </summary>
+        public override string Condition
+        {
+            get { return condition; }
+        }
 
         /// <summary>
         /// Функция проверки числа на простое
@@ -46,7 +65,7 @@ namespace AlgorithmsAndDataStructures
         /// <summary>
         /// Тестирование числа с положительным и отрицательным исходом
         /// </summary>
-        public void Demo()
+        public override void Demo()
         {
             int a = 37;
             int b = 8;
@@ -60,7 +79,7 @@ namespace AlgorithmsAndDataStructures
         /// Проверка на корректоность введенных данных, при положительном исходе вызов вычислительной функции
         /// </summary>
         /// <param name="str"></param>
-        public void WorkWithClientData(string str)
+        public override void WorkWithClientData(string str)
         {
             int num;
             bool isNum = int.TryParse(str, out num);
@@ -79,13 +98,29 @@ namespace AlgorithmsAndDataStructures
     //1. Реализовать рекурсивную версию и версию без рекурсии(через цикл);
     //2. Обе реализации сделать методами отдельного класса;
     //3. На вход методы должны принимать целочисленный параметр, определяющий количество элементов формируемой последовательности.
-    class Lesson1_3 : Lesson, IHomework
+    class Lesson1_3 : Lesson
     {
-        public string Name => "1.3";
-
-        public string Description => "Реализация вывода чисел Фибоначчи с рекурсией и без";
-
-        public string Condition => "Введите число - количество чисел для вывода последовательности Фибоначчи";
+        private string name = "1.3";
+        public override string Name
+        {
+            get { return name; }
+        }
+        private string description = "Реализация вывода чисел Фибоначчи с рекурсией и без";
+        /// <summary>
+        /// Описание урока
+        /// </summary>
+        public override string Description
+        {
+            get { return description; }
+        }
+        private string condition = "Введите число - количество чисел для вывода последовательности Фибоначчи";
+        /// <summary>
+        /// Условия для ввода данных (при пользовательском вводе)
+        /// </summary>
+        public override string Condition
+        {
+            get { return condition; }
+        }
 
         public void Algorithms(int count)
         {
@@ -145,7 +180,7 @@ namespace AlgorithmsAndDataStructures
         /// <summary>
         /// Тестирование числа на значениях 5 и 15
         /// </summary>
-        public void Demo()
+        public override void Demo()
         {
             Algorithms(5);
             Algorithms(15);
@@ -154,7 +189,7 @@ namespace AlgorithmsAndDataStructures
         /// Проверка введенных данных, при положительном исходе вызов вычислительной функции
         /// </summary>
         /// <param name="str"></param>
-        public void WorkWithClientData(string str)
+        public override void WorkWithClientData(string str)
         {
             int num;
             bool isNum = int.TryParse(str, out num);
