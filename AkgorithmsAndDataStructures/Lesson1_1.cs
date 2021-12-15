@@ -10,30 +10,9 @@ namespace AlgorithmsAndDataStructures
     //4. Код выложить на GitHub.
     class Lesson1_1 : Lesson
     {
-        private string name = "1.1";
-        /// <summary>
-        /// Код урока
-        /// </summary>
-        public override string Name
-        {
-            get { return name; }
-        }
-        private string description = "Анализ принадлежности к множеству простых чисел.";
-        /// <summary>
-        /// Описание урока
-        /// </summary>
-        public override string Description
-        {
-            get { return description; }
-        }
-        private string condition = "Введите число";
-        /// <summary>
-        /// Условия для ввода данных (при пользовательском вводе)
-        /// </summary>
-        public override string Condition
-        {
-            get { return condition; }
-        }
+        public override string Name => "1.1";
+        public override string Description => "Анализ принадлежности к множеству простых чисел.";
+        public override string Condition => "Введите число";
 
         /// <summary>
         /// Функция проверки числа на простое
@@ -100,27 +79,9 @@ namespace AlgorithmsAndDataStructures
     //3. На вход методы должны принимать целочисленный параметр, определяющий количество элементов формируемой последовательности.
     class Lesson1_3 : Lesson
     {
-        private string name = "1.3";
-        public override string Name
-        {
-            get { return name; }
-        }
-        private string description = "Реализация вывода чисел Фибоначчи с рекурсией и без";
-        /// <summary>
-        /// Описание урока
-        /// </summary>
-        public override string Description
-        {
-            get { return description; }
-        }
-        private string condition = "Введите число - количество чисел для вывода последовательности Фибоначчи";
-        /// <summary>
-        /// Условия для ввода данных (при пользовательском вводе)
-        /// </summary>
-        public override string Condition
-        {
-            get { return condition; }
-        }
+        public override string Name => "1.3";
+        public override string Description => "Реализация вывода чисел Фибоначчи с рекурсией и без";
+        public override string Condition => "Введите число - количество чисел для вывода последовательности Фибоначчи";
 
         public void Algorithms(int count)
         {
