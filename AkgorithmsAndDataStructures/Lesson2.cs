@@ -2,13 +2,33 @@
 
 namespace AlgorithmsAndDataStructures
 {
-    class Lesson2 : Lesson, IHomework
+    class Lesson2 : Lesson
     {
-        public string Name => "2";
+        private string name = "2";
+        /// <summary>
+        /// Код урока
+        /// </summary>
+        public override string Name
+        {
+            get { return name; }
+        }
+        private string description = "Реализация класса двусвязного списка и операции вставки, удаления и поиска элемента в нем в соответствии с интерфейсом";
+        /// <summary>
+        /// Описание урока
+        /// </summary>
+        public override string Description
+        {
+            get { return description; }
+        }
+        private string condition = null;
+        /// <summary>
+        /// Условия для ввода данных (при пользовательском вводе)
+        /// </summary>
+        public override string Condition
+        {
+            get { return condition; }
+        }
 
-        public string Description => "Реализация класса двусвязного списка и операции вставки, удаления и поиска элемента в нем в соответствии с интерфейсом";
-
-        public string Condition => null;
         /// <summary>
         /// Вывод списка
         /// </summary>
@@ -25,7 +45,7 @@ namespace AlgorithmsAndDataStructures
         /// <summary>
         /// Тестирование задания 2
         /// </summary>
-        public void Demo()
+        public override void Demo()
         {
             //пример добавления элементов в лист
             Console.WriteLine("Добавление элементов в список (1 - 10)");
@@ -56,7 +76,7 @@ namespace AlgorithmsAndDataStructures
             OutputNode(currentNode);
         }
 
-        public void WorkWithClientData(string str)
+        public override void WorkWithClientData(string str)
         {
 
         }
