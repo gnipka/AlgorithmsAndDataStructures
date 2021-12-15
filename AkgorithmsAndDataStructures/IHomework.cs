@@ -22,7 +22,7 @@
         /// Ввод данных пользователем с клавиутуры
         /// </summary>
         /// <param name="str"></param>
-        void WorkWithClientData(string str);
+        void WorkWithClientData();
         /// <summary>
         /// Вывыд на экран
         /// </summary>

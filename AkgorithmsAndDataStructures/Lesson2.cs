@@ -55,9 +55,9 @@ namespace AlgorithmsAndDataStructures
             OutputNode(currentNode);
         }
 
-        public override void WorkWithClientData(string str)
+        public override void WorkWithClientData()
         {
-
+            return;
         }
     }
     /// <summary>

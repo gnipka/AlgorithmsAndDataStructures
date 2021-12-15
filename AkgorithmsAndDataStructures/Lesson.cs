@@ -5,7 +5,7 @@ namespace AlgorithmsAndDataStructures
     public abstract class Lesson:IHomework
     {
         public abstract void Demo();
-        public abstract void WorkWithClientData(string str);
+        public abstract void WorkWithClientData();
 
         public abstract string Name { get; }
 
@@ -15,26 +15,19 @@ namespace AlgorithmsAndDataStructures
 
         public void Output()
         {
+            InputOutput.IInputOutputHelper inputOutputHelper = new InputOutput.ConsoleInputOutputHelper();
             Console.Clear();
             Console.WriteLine("Тестирование программы:");
             Demo();
-            Console.WriteLine("Для возвращения в меню введите return");
             while (true)
             {
-                if (Condition != null)
+                Console.WriteLine("Для возвращения в меню введите return");
+                Console.WriteLine("Для продолжения введите любые другие символы");
+                if(Console.ReadLine().Trim() == "return")
                 {
-                    Console.WriteLine(Condition);
+                    break;
                 }
-                string str = Console.ReadLine();
-                if (str.Trim() == "return")
-                {
-                    return;
-                }
-                if (Condition != null)
-                {
-                    WorkWithClientData(str);
-                    Console.WriteLine();
-                }
+                WorkWithClientData();
             }
         }
     }

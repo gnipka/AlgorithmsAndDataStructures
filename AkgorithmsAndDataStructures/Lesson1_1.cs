@@ -58,19 +58,11 @@ namespace AlgorithmsAndDataStructures
         /// Проверка на корректоность введенных данных, при положительном исходе вызов вычислительной функции
         /// </summary>
         /// <param name="str"></param>
-        public override void WorkWithClientData(string str)
+        public override void WorkWithClientData()
         {
-            int num;
-            bool isNum = int.TryParse(str, out num);
-            if (isNum)
-            {
-                Algorithms(Convert.ToInt32(str));
-            }
-            else
-            {
-                Console.WriteLine($"Введенное значение не является числом {str}");
-                return;
-            }
+            InputOutput.IInputOutputHelper inputOutputHelper = new InputOutput.ConsoleInputOutputHelper();
+            int num = inputOutputHelper.InputSingleValue<int>(Condition);
+            Algorithms(num);
         }
     }
 
@@ -82,7 +74,7 @@ namespace AlgorithmsAndDataStructures
         public override string Name => "1.3";
         public override string Description => "Реализация вывода чисел Фибоначчи с рекурсией и без";
         public override string Condition => "Введите число - количество чисел для вывода последовательности Фибоначчи";
-
+        
         public void Algorithms(int count)
         {
             Console.Write("Вывод последовательности Фибоначчи с рекурсией: ");
@@ -150,19 +142,11 @@ namespace AlgorithmsAndDataStructures
         /// Проверка введенных данных, при положительном исходе вызов вычислительной функции
         /// </summary>
         /// <param name="str"></param>
-        public override void WorkWithClientData(string str)
+        public override void WorkWithClientData()
         {
-            int num;
-            bool isNum = int.TryParse(str, out num);
-            if (isNum)
-            {
-                Algorithms(Convert.ToInt32(str));
-            }
-            else
-            {
-                Console.WriteLine($"Введенное значение не является числом {str}");
-                return;
-            }
+            InputOutput.IInputOutputHelper inputOutputHelper = new InputOutput.ConsoleInputOutputHelper();
+            int num = inputOutputHelper.InputSingleValue<int>(Condition);
+            Algorithms(num);
         }
     }
 }
