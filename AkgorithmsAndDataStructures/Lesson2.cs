@@ -57,7 +57,7 @@ namespace AlgorithmsAndDataStructures
 
         public override void WorkWithClientData()
         {
-            return;
+            Console.WriteLine("Ввод пользовательских данных не предусмотрен");
         }
     }
     /// <summary>

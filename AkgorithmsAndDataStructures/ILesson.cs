@@ -1,6 +1,6 @@
 ﻿namespace AlgorithmsAndDataStructures
 {
-    public interface IHomework
+    public interface ILesson
     {
         /// <summary>
         /// Код урока

@@ -2,7 +2,7 @@
 
 namespace AlgorithmsAndDataStructures
 {
-    public abstract class Lesson:IHomework
+    public abstract class Lesson:ILesson
     {
         public abstract void Demo();
         public abstract void WorkWithClientData();
@@ -15,7 +15,6 @@ namespace AlgorithmsAndDataStructures
 
         public void Output()
         {
-            InputOutput.IInputOutputHelper inputOutputHelper = new InputOutput.ConsoleInputOutputHelper();
             Console.Clear();
             Console.WriteLine("Тестирование программы:");
             Demo();
