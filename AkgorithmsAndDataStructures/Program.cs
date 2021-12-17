@@ -6,11 +6,12 @@ namespace AlgorithmsAndDataStructures
 {
     class Program
     {
-        static List<IHomework> _homeworks = new List<IHomework>()
+        static List<ILesson> _homeworks = new List<ILesson>()
         {
             new Lesson1_1(),
             new Lesson1_3(),
-            new Lesson2()
+            new Lesson2(),
+            new Lesson3()
         };
         static void Main(string[] args)
         {
@@ -21,7 +22,7 @@ namespace AlgorithmsAndDataStructures
                 Console.WriteLine("Для выбора задания введите его код");
                 Console.WriteLine("Доступные задания:");
 
-                foreach (IHomework homework in _homeworks)
+                foreach (ILesson homework in _homeworks)
                 {
                     Console.WriteLine($"Код задания: {homework.Name} ({homework.Description})");
                 }
@@ -30,7 +31,7 @@ namespace AlgorithmsAndDataStructures
                     string nameLesson = Console.ReadLine();
                     try
                     {
-                        IHomework homeworkNow = _homeworks.Single(h => h.Name == nameLesson.Trim());
+                        ILesson homeworkNow = _homeworks.Single(h => h.Name == nameLesson.Trim());
                         homeworkNow.Output();
                         break;
                     }
