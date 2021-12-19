@@ -40,6 +40,11 @@ namespace AlgorithmsAndDataStructures
                         Console.WriteLine($"Задание с кодом {nameLesson} не найдено");
                         Console.WriteLine("Введите код");
                     }
+                    catch (NullReferenceException)
+                    {
+                        Console.WriteLine($"Задание с кодом {nameLesson} не найдено");
+                        Console.WriteLine("Введите код");
+                    }
                 }
             }
         }

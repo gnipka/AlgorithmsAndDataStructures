@@ -20,7 +20,7 @@ namespace AlgorithmsAndDataStructures
             Stopwatch sw = new Stopwatch();
             long count = 50000;
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine("Points     |     PointStructDouble    |     PointClassDouble     |     Ratio");
+            Console.WriteLine("Points\t|\tPointStructDouble\t|\tPointClassDouble\t|\tRatio");
             Console.ResetColor();
             while (count < 5000000)
             {
@@ -28,15 +28,15 @@ namespace AlgorithmsAndDataStructures
                 TimeSpan ts2 = TestStruct(count);
                 if (count / 100000 == 0)
                 {
-                    Console.WriteLine($"{count}      |     {ts1}     |     {ts2}     |     {ts1 / ts2}");
+                    Console.WriteLine($"{count}\t|\t{ts1}\t|\t{ts2}\t|\t{ts1 / ts2}");
                 }
                 else if (count / 1000000 == 0)
                 {
-                    Console.WriteLine($"{count}     |     {ts1}     |     {ts2}     |     {ts1 / ts2}");
+                    Console.WriteLine($"{count}\t|\t{ts1}\t|\t{ts2}\t|\t{ts1 / ts2}");
                 }
                 else
                 {
-                    Console.WriteLine($"{count}    |     {ts1}     |     {ts2}     |     {ts1 / ts2}");
+                    Console.WriteLine($"{count}\t|\t{ts1}\t|\t{ts2}\t|\t{ts1 / ts2}");
                 }
                 count = count * 2;
             }
