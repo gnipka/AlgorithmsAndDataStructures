@@ -31,7 +31,7 @@ namespace AlgorithmsAndDataStructures
                     string nameLesson = Console.ReadLine();
                     try
                     {
-                        ILesson homeworkNow = _homeworks.Single(h => h.Name == nameLesson.Trim());
+                        ILesson homeworkNow = _homeworks.SingleOrDefault(h => h.Name == nameLesson.Trim());
                         homeworkNow.Output();
                         break;
                     }

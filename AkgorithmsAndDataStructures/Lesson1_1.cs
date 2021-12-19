@@ -74,7 +74,7 @@ namespace AlgorithmsAndDataStructures
         public override string Name => "1.3";
         public override string Description => "Реализация вывода чисел Фибоначчи с рекурсией и без";
         public override string Condition => "Введите число - количество чисел для вывода последовательности Фибоначчи";
-        
+
         public void Algorithms(int count)
         {
             Console.Write("Вывод последовательности Фибоначчи с рекурсией: ");
