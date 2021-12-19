@@ -2,7 +2,7 @@
 
 namespace AlgorithmsAndDataStructures
 {
-    public abstract class Lesson:ILesson
+    public abstract class Lesson : ILesson
     {
         public abstract void Demo();
         public abstract void WorkWithClientData();
@@ -22,7 +22,7 @@ namespace AlgorithmsAndDataStructures
             {
                 Console.WriteLine("Для возвращения в меню введите return");
                 Console.WriteLine("Для продолжения введите любые другие символы");
-                if(Console.ReadLine().Trim() == "return")
+                if (Console.ReadLine().Trim() == "return")
                 {
                     break;
                 }
