@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -36,9 +37,10 @@ namespace AlgorithmsAndDataStructures
             treeNode.Print(treeNode.Root);    //Вывод дерева
             Console.WriteLine();
 
-            Console.WriteLine($"Удаление поддерева со значением - {treeNode.Root.Left.Left.Data}");
 
-            treeNode.RemoveSubTree(treeNode.Root, treeNode.Root.Left.Left.Data);  //Удаление поддерева   
+            Console.WriteLine($"Удаление поддерева со значением - {treeNode.Root.Left.Data}");
+
+            treeNode.RemoveSubTree(treeNode.Root, treeNode.Root.Left.Data);  //Удаление поддерева   
 
             treeNode.Print(treeNode.Root);    //Вывод дерева
             Console.WriteLine();
@@ -266,6 +268,115 @@ namespace AlgorithmsAndDataStructures
                     Print(node.Right);
                 }
             }
+        }
+    }
+    public class Lesson4_2 : Lesson
+    {
+        public override string Name => "4.2";
+
+        public override string Description => "Создание массива и HashSet с 10000 строками, проверка производительности для метода наличия строк";
+
+        public override string Condition => null;
+
+        public override void Demo()
+        {
+            long count = 10000;
+            var array = BuildingStringArray(count);
+            var hashSet = BuildingStringHashSet(count);
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("String\t|\tArray\t\t\t|\tHashSet\t\t\t|\tRatio");
+            Console.ResetColor();
+            while (count < 100000)
+            {
+                TimeSpan ts1 = TestArray(array);
+                TimeSpan ts2 = TestHashSet(hashSet);
+                Console.WriteLine($"{count}\t|\t{ts1}\t|\t{ts2}\t|\t{ts1 / ts2}");
+                count += 10000;
+            }
+        }
+
+        public override void WorkWithClientData()
+        {
+            throw new NotImplementedException();
+        }
+        /// <summary>
+        /// Заполнение массива случайными строками
+        /// </summary>
+        /// <param name="count">количество элементов массива</param>
+        /// <returns></returns>
+        public string[] BuildingStringArray(long count)
+        {
+            var array = new string[count];
+
+            for(long i = 0; i < array.Length; i++)
+            {
+                array[i] += BuildingString();
+            }
+            return array;
+        }
+        /// <summary>
+        /// Заполнение HashSet случайными строками
+        /// </summary>
+        /// <param name="count"></param>
+        /// <returns></returns>
+        public HashSet<string> BuildingStringHashSet(long count)
+        {
+            var hashSet = new HashSet<string>();
+
+            for (long i = 0; i < count; i++)
+            {
+                hashSet.Add(BuildingString());
+            }
+            return hashSet;
+        }
+        /// <summary>
+        /// Создание случайных строк
+        /// </summary>
+        /// <returns></returns>
+        public string BuildingString()
+        {
+            var rnd = new Random();
+            var length = rnd.Next(0, 100); 
+            var str = string.Empty;
+
+            while (length-- > 0)
+            {
+                str += (char)rnd.Next(0, 256);
+                length--;
+            }
+            return str;
+        }
+        TimeSpan TestHashSet(HashSet<string> hashSet)
+        {
+            Stopwatch sw = new Stopwatch();
+            sw.Start();
+            foreach (var item in hashSet)
+            {
+                IsString(item);
+            }
+            sw.Stop();
+            return sw.Elapsed;
+        }
+
+        TimeSpan TestArray(string[] str)
+        {
+            Stopwatch sw = new Stopwatch();
+            sw.Start();
+            for (int i = 0; i < str.Length; i++)
+            {
+                IsString(str[i]);
+            }
+            sw.Stop();
+            return sw.Elapsed;
+        }
+
+        bool IsString(string str)
+        {
+            if(str == null)
+            {
+                return false;
+            }
+            return true;
         }
     }
 }
