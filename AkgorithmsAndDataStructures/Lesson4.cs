@@ -308,7 +308,7 @@ namespace AlgorithmsAndDataStructures
         {
             var array = new string[count];
 
-            for(long i = 0; i < array.Length; i++)
+            for (long i = 0; i < array.Length; i++)
             {
                 array[i] += BuildingString();
             }
@@ -336,7 +336,7 @@ namespace AlgorithmsAndDataStructures
         public string BuildingString()
         {
             var rnd = new Random();
-            var length = rnd.Next(0, 100); 
+            var length = rnd.Next(0, 100);
             var str = string.Empty;
 
             while (length-- > 0)
@@ -346,6 +346,11 @@ namespace AlgorithmsAndDataStructures
             }
             return str;
         }
+        /// <summary>
+        /// Тест на производительность HashSet
+        /// </summary>
+        /// <param name="hashSet"></param>
+        /// <returns></returns>
         TimeSpan TestHashSet(HashSet<string> hashSet)
         {
             Stopwatch sw = new Stopwatch();
@@ -357,7 +362,11 @@ namespace AlgorithmsAndDataStructures
             sw.Stop();
             return sw.Elapsed;
         }
-
+        /// <summary>
+        /// Тест на производительность Array
+        /// </summary>
+        /// <param name="str"></param>
+        /// <returns></returns>
         TimeSpan TestArray(string[] str)
         {
             Stopwatch sw = new Stopwatch();
@@ -369,10 +378,14 @@ namespace AlgorithmsAndDataStructures
             sw.Stop();
             return sw.Elapsed;
         }
-
+        /// <summary>
+        /// Проверка на строку
+        /// </summary>
+        /// <param name="str"></param>
+        /// <returns></returns>
         bool IsString(string str)
         {
-            if(str == null)
+            if (str == null)
             {
                 return false;
             }
