@@ -4,9 +4,30 @@ namespace AlgorithmsAndDataStructures
 {
     class Lesson2 : Lesson
     {
-        public override string Name => "2";
-        public override string Description => "Реализация класса двусвязного списка и операции вставки, удаления и поиска элемента в нем в соответствии с интерфейсом";
-        public override string Condition => null;
+        private string name = "2";
+        /// <summary>
+        /// Код урока
+        /// </summary>
+        public override string Name
+        {
+            get { return name; }
+        }
+        private string description = "Реализация класса двусвязного списка и операции вставки, удаления и поиска элемента в нем в соответствии с интерфейсом";
+        /// <summary>
+        /// Описание урока
+        /// </summary>
+        public override string Description
+        {
+            get { return description; }
+        }
+        private string condition = null;
+        /// <summary>
+        /// Условия для ввода данных (при пользовательском вводе)
+        /// </summary>
+        public override string Condition
+        {
+            get { return condition; }
+        }
 
         /// <summary>
         /// Вывод списка
@@ -57,7 +78,7 @@ namespace AlgorithmsAndDataStructures
 
         public override void WorkWithClientData()
         {
-            Console.WriteLine("Ввод пользовательских данных не предусмотрен");
+
         }
     }
     /// <summary>
