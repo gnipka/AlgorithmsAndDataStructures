@@ -8,7 +8,7 @@ namespace AlgorithmsAndDataStructures
     //2. Алгоритм реализовать в отдельном классе согласно блок-схеме.
     //3. Написать проверочный код(один положительный, один отрицательный сценарий) в отдельной функции и вызывать его при запуске.
     //4. Код выложить на GitHub.
-    class Lesson1_1 : Lesson
+    class Lesson1 : Lesson
     {
         public override string Name => "1.1";
         public override string Description => "Анализ принадлежности к множеству простых чисел.";

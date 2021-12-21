@@ -8,10 +8,12 @@ namespace AlgorithmsAndDataStructures
     {
         static List<ILesson> _homeworks = new List<ILesson>()
         {
-            new Lesson1_1(),
+            new Lesson1(),
             new Lesson1_3(),
             new Lesson2(),
-            new Lesson3()
+            new Lesson3(),
+            new Lesson4(),
+            new Lesson4_2()
         };
         static void Main(string[] args)
         {
