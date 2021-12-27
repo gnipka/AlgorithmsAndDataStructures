@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.31911.196
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AlgorithmsAndDataStructures", "AkgorithmsAndDataStructures\AlgorithmsAndDataStructures.csproj", "{D03654C7-9012-4AC5-B8AE-2AE1CDDB4514}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibLesson", "LibLesson\LibLesson.csproj", "{98C796EC-941D-4913-B463-59B731322417}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LibLesson", "LibLesson\LibLesson.csproj", "{98C796EC-941D-4913-B463-59B731322417}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibILesson", "LibILesson\LibILesson.csproj", "{25338C03-65E3-441C-9494-4C59392148C9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{98C796EC-941D-4913-B463-59B731322417}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{98C796EC-941D-4913-B463-59B731322417}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{98C796EC-941D-4913-B463-59B731322417}.Release|Any CPU.Build.0 = Release|Any CPU
+		{25338C03-65E3-441C-9494-4C59392148C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{25338C03-65E3-441C-9494-4C59392148C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{25338C03-65E3-441C-9494-4C59392148C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{25338C03-65E3-441C-9494-4C59392148C9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

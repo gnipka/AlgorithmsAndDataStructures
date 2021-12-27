@@ -1,4 +1,4 @@
-﻿namespace AlgorithmsAndDataStructures
+﻿namespace LibILesson
 {
     public interface ILesson
     {
