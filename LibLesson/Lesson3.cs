@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AlgorithmsAndDataStructures
+namespace LibLesson
 {
     class Lesson3 : Lesson
     {

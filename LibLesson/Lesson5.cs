@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace AlgorithmsAndDataStructures
+namespace LibLesson
 {
     class Lesson5 : Lesson
     {
@@ -55,11 +58,11 @@ namespace AlgorithmsAndDataStructures
                 if (detailed)
                     s += "получение значения " + node.Data.ToString() + Environment.NewLine;
                 else
-                    s += node.Data.ToString() + " ";
+                    s += node.Data.ToString() + " "; // запомнить текущее значение
                 if (detailed) s += "    обход левого поддерева" + Environment.NewLine;
-                DFS(node.Left, ref s, detailed); // рекурурсивно заходим в левое поддерево
+                DFS(node.Left, ref s, detailed); // обойти левое поддерево
                 if (detailed) s += "    обход правого поддерева" + Environment.NewLine;
-                DFS(node.Right, ref s, detailed); // рекурурсивно заходим в правое поддерево
+                DFS(node.Right, ref s, detailed); // обойти правое поддерево
             }
             else if (detailed) s += "значение отсутствует - null" + Environment.NewLine;
         }
@@ -72,7 +75,7 @@ namespace AlgorithmsAndDataStructures
         /// <param name="detailed"> для красивого вывода </param>
         private void BFC(Node<int> node, ref string s, bool detailed)
         {
-            var queue = new Queue<Node<int>>();
+            var queue = new Queue<Node<int>>(); 
             if (detailed) s += "    помещаем в очередь значение " + node.Data.ToString() + Environment.NewLine; queue.Enqueue(node);
             while (queue.Count != 0) // пока очередь не пуста
             {
