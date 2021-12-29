@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace AlgorithmsAndDataStructures
+namespace LibLesson
 {
 
     //Требуется реализовать на C# функцию согласно блок-схеме. Блок-схема описывает алгоритм проверки, простое число или нет.

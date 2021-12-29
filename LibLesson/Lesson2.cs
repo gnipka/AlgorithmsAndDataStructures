@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace AlgorithmsAndDataStructures
+namespace LibLesson
 {
     class Lesson2 : Lesson
     {

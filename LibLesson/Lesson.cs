@@ -1,7 +1,7 @@
 ﻿using LibILesson;
 using System;
 
-namespace AlgorithmsAndDataStructures
+namespace LibLesson
 {
     public abstract class Lesson : ILesson
     {
