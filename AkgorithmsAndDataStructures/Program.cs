@@ -26,7 +26,8 @@ namespace AlgorithmsAndDataStructures
         {
             while (true)
             {
-                var myAssembly = AssemblyLoadContext.Default.LoadFromAssemblyPath(@"C:\Users\admin\source\repos\AkgorithmsAndDataStructures\LibLesson\bin\Debug\net5.0\LibLesson.dll");
+                string lessonsLibraryPath = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "LibLesson.dll");
+                var myAssembly = AssemblyLoadContext.Default.LoadFromAssemblyPath(lessonsLibraryPath);
                 Type myType1 = myAssembly.GetType("LibLesson.Lesson1");
                 dynamic obj1 = Activator.CreateInstance(myType1);
                 _homeworks.Add(obj1);
@@ -35,25 +36,25 @@ namespace AlgorithmsAndDataStructures
                 dynamic obj13 = Activator.CreateInstance(myType13);
                 _homeworks.Add(obj13);
 
-                var myType2 = myAssembly.GetType("Lesson2.Lesson2");
+                var myType2 = myAssembly.GetType("LibLesson.Lesson2");
                 dynamic obj2 = Activator.CreateInstance(myType2);
                 _homeworks.Add(obj2);
 
-                var myType3 = myAssembly.GetType("Lesson3");
-                dynamic obj3 = Activator.CreateInstance(myType3);
-                _homeworks.Add(obj3);
+                //var myType3 = myAssembly.GetType("Lesson3");
+                //dynamic obj3 = Activator.CreateInstance(myType3);
+                //_homeworks.Add(obj3);
 
-                var myType4 = myAssembly.GetType("Lesson4.Lesson4");
-                dynamic obj4 = Activator.CreateInstance(myType4);
-                _homeworks.Add(obj4);
+                //var myType4 = myAssembly.GetType("Lesson4.Lesson4");
+                //dynamic obj4 = Activator.CreateInstance(myType4);
+                //_homeworks.Add(obj4);
 
-                var myType42 = myAssembly.GetType("Lesson4.Lesson4_2");
-                dynamic obj42 = Activator.CreateInstance(myType42);
-                _homeworks.Add(obj42);
+                //var myType42 = myAssembly.GetType("Lesson4.Lesson4_2");
+                //dynamic obj42 = Activator.CreateInstance(myType42);
+                //_homeworks.Add(obj42);
 
-                var myType5 = myAssembly.GetType("Lesson5");
-                dynamic obj5 = Activator.CreateInstance(myType5);
-                _homeworks.Add(obj5);
+                //var myType5 = myAssembly.GetType("Lesson5");
+                //dynamic obj5 = Activator.CreateInstance(myType5);
+                //_homeworks.Add(obj5);
 
                 Console.Clear();
                 Console.WriteLine("0 - Выход из программы");
