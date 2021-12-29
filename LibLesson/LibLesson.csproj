@@ -8,4 +8,8 @@
     <ProjectReference Include="..\LibILesson\LibILesson.csproj" />
   </ItemGroup>
 
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="copy /Y &quot;$(TargetDir)$(ProjectName).dll&quot; &quot;$(SolutionDir)\AkgorithmsAndDataStructures\bin\Debug\net5.0\&quot;" />
+  </Target>
+
 </Project>
